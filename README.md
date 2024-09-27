@@ -1,3 +1,4 @@
 # food_inspection
 Group C project
-<img width="400" alt="Screenshot 2024-09-24 at 19 25 43" src="https://github.com/user-attachments/assets/331ba43f-0f35-4616-bd35-c342168980a4">
+
+![Screenshot 2024-09-27 at 17 38 08](https://github.com/user-attachments/assets/f55c2dc7-2f14-40d7-a362-0fcb8b8bb168)
