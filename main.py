@@ -109,7 +109,7 @@ df_clean['inspection_year'] = df_clean['Inspection Date'].dt.year
 df_clean['inspection_month'] = df_clean['Inspection Date'].dt.month
 df_clean['day_of_week'] = df_clean['Inspection Date'].dt.dayofweek
 
-df_clean['risk_facility_interaction'] = df_clean['Risk_encoded'] * df_clean['Facility Type_Restaurant']  # Example for one facility type
+df_clean['risk_facility_interaction'] = df_clean['Risk_encoded'] * df_clean['Facility Type']
 
 kmeans = KMeans(n_clusters=10, random_state=42)
 df_clean['geo_cluster'] = kmeans.fit_predict(df_clean[['Latitude', 'Longitude']])
@@ -225,12 +225,11 @@ y_val_pred = best_model.predict(X_val)
 
 y_test_pred = best_model.predict(X_test)
 
+print("Validation Set Performance after Hyperparameter Tuning:")
+print(classification_report(y_val, y_val_pred))
 
 print("Test Set Performance after Hyperparameter Tuning:")
 print(classification_report(y_test, y_test_pred))
-
-print("Validation Set Performance after Hyperparameter Tuning:")
-print(classification_report(y_val, y_val_pred))
 
 scores = cross_val_score(best_model, X_temp, y_temp, cv=5, scoring='f1_macro')
 
